@@ -14,11 +14,11 @@ contract StakingTest is Test , MockERC20 {
         staking = new StakingContract();
         token = new MockERC20();        
     }
-    function testStake() public {
-        token.approve(address(staking),AMOUNT);
-        bool success = staking.stake(AMOUNT, address(token));
+    function testStakeFuzz(uint32 amount) public {
+        token.approve(address(staking),amount);
+        bool success = staking.stake(amount, address(token));
         uint value = token.balanceOf(address(staking));
-        assertEq(value,AMOUNT);
+        assertEq(value,amount);
         assertTrue(success);
     }
 }
