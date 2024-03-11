@@ -2,6 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
+//change from console2 to console
 import {StakingContract} from "../src/StakingContract.sol";
 import {MockERC20} from "../src/Mocks.sol";
 // run the test with forge test -vvvv
